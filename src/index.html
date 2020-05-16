@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafy</title>
+    <script src="https://use.fontawesome.com/9df1f10006.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="/Graphs/lib/sigma.min.js"></script>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Main')" id="defaultOpen">Wprowadź graf</button>
+            <button class="tablinks" onclick="openTab(event, 'AdjacencyMatrix')"><span style="color: dodgerblue;"><i
+                        class="fa fa-plus-circle"></i></span> Macierz sąsiedztwa</button>
+            <!-- <button class="tablinks" onclick="openTab(event, 'IncidenceMatrix')"><span style="color: Green;"><i
+                        class="fa fa-plus-circle"></i></span> Macierz incydencji</button> -->
+            <button class="tablinks" onclick="openTab(event, 'AdjacencyList')"><span style="color: Black;"><i
+                        class="fa fa-th-list"></i></span> Lista sąsiedztwa</button>
+            <button class="tablinks" onclick="openTab(event, 'EulerAndHamilton')"><span style="color: lightcoral;"><i
+                        class="fa fa-asterisk"></i></span> Cykl Eulera</button>
+            <button class="tablinks" onclick="openTab(event, 'bfs')"><span style="color:fuchsia"><i
+                        class="fa fa-search"></i></span> Przeszukiwanie wszerz</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Main" class="tabcontent">
+            <div style="display:inline-block">
+                <p>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <b>Liczba wierzchołków:</b>
+                        <select name="numberOfNodes" id="numberOfNodes" style="width:100px">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <input type="submit" name="addNode" id="addNode" value="Wyświetl">
+                        <br><br>
+                        <b>Krawędzie:</b>
+                        połącz wierzchołek <select name="nodeFirst" id="nodeFirst" style="width:100px"></select>
+                        z wierzchołkiem <select name="nodeSecond" id="nodeSecond" style="width:100px"></select>
+                        <input type="submit" name="addEdge" id="addEdge" value="Połącz">
+                    </form>
+
+                </p>
+            </div>
+
+        </div>
+
+        <div id="AdjacencyMatrix" class="tabcontent">
+            <br>
+            <b>Wprowadź macierz sąsiedztwa:</b>
+            <br>
+            <h4 style="font-size: 12px; font-weight:normal; margin: 5px;">(Poszczególne wartości oddziel spacjami. Aby
+                przejść do
+                nowego wiersza
+                macierzy,
+                wciśnij ENTER.)</h4>
+            <br>
+            <div>
+                <textarea name="AdjacencyMatrixTextArea" id="AdjacencyMatrixTextArea" cols="30" rows="10"
+                    style="position:relative; left:15px; resize: none;"></textarea>
+            </div>
+            <input style="position: relative; left: 70px;" type="submit" name="addAdjacencyMatrix"
+                id="addAdjacencyMatrix" value="Wyświetl">
+
+        </div>
+
+        <!-- <div id="IncidenceMatrix" class="tabcontent">
+            <br>
+            <b>Wprowadź macierz incydencji:</b>
+            <br>
+            <h4 style="font-size: 12px; font-weight:normal; margin: 5px;">(Poszczególne wartości oddziel spacjami. Aby
+                przejść do
+                nowego wiersza
+                macierzy,
+                wciśnij ENTER.)</h4>
+            <br>
+            <div>
+                <textarea name="IncidenceMatrixTextArea" id="IncidenceMatrixTextArea" cols="30" rows="10"
+                    style="position:relative; left:15px;"></textarea>
+            </div>
+            <input style="position: relative; left: 70px;" type="submit" name="addIncidenceMatrix"
+                id="addIncidenceMatrix" value="Wyświetl">
+
+
+        </div> -->
+
+        <div id="AdjacencyList" class="tabcontent">
+            <br>
+            <b>Liczba wierzchołków:</b>
+            <select name="numberOfNodesInList" id="numberOfNodesInList" style="width:100px">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <input type="submit" name="addNodeToAdjacencyList" id="addNodeToAdjacencyList" value="Dodaj">
+            <br><br>
+            <b>Wprowadź listę sąsiedztwa:</b>
+            <br>
+            <h4 style="font-size: 12px; font-weight:normal; margin: 5px;">(Poszczególne wartości oddziel spacjami. Aby
+                przejść do
+                nowego wiersza
+                macierzy,
+                wciśnij ENTER.)</h4>
+            <br>
+            <div>
+                <textarea name="addingNodes" id="addingNodes" cols="1" rows="11"
+                    style="position: fixed; margin: 0px; text-align: center; font-weight: bold; resize: none; border: none;"
+                    readonly="readonly"></textarea>
+                <textarea name="AdjacencyListTextArea" id="AdjacencyListTextArea" cols="30" rows="10"
+                    style="position: relative; left:29px; margin: 0px; resize: none;"></textarea>
+            </div>
+            <input style="position: relative; left: 75px;" type="submit" name="addAdjacencyList" id="addAdjacencyList"
+                value="Wyświetl">
+        </div>
+
+        <div id="EulerAndHamilton" class="tabcontent">
+            <br>
+            <b>Cykl Eulera:</b><br><br>
+            Występowanie cyklu Eulera: <div style="display: inline" id="evenNodesorNot"></div>
+            <br>
+            Cykl Eulera: <div style="display: inline; font-weight: bold;" id="eulerianPath"></div>
+            <br><br>
+        </div>
+
+        <div id="bfs" class="tabcontent">
+
+            <br>
+            <b>Przeszukiwanie wszerz:</b><br><br>
+            <div id='addBfs' style="color: goldenrod; font-weight: bold;"></div>
+            <br>
+
+        </div>
+
+    </div>
+
+    <div id='sigma-container'></div>
+
+    <script src="js/opentab.js"></script>
+    <script src="js/graphs.js"></script>
+    <script src="js/breadthFirstSearch.js"></script>
+    <script src="js/eulerPath.js"></script>
+
+</body>
+
+</html>
