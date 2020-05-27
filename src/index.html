@@ -24,7 +24,9 @@
             <button class="tablinks" onclick="openTab(event, 'EulerAndHamilton')"><span style="color: lightcoral;"><i
                         class="fa fa-asterisk"></i></span> Cykl Eulera</button>
             <button class="tablinks" onclick="openTab(event, 'bfs')"><span style="color:fuchsia"><i
-                        class="fa fa-search"></i></span> Przeszukiwanie wszerz</button>
+                        class="fa fa-search"></i></span> Przeszukiwanie</button>
+            <button class="tablinks" onclick="openTab(event, 'color')"><span style="color:yellowgreen"><i
+                        class="fa fa-paint-brush"></i></span> Kolorowanie</button>
         </div>
 
         <!-- Tab content -->
@@ -52,8 +54,32 @@
                         z wierzchołkiem <select name="nodeSecond" id="nodeSecond" style="width:100px"></select>
                         <input type="submit" name="addEdge" id="addEdge" value="Połącz">
                     </form>
-
                 </p>
+                <br>
+
+                <hr class="style-one">
+
+                <p>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <b>Przykładowe grafy:</b>
+                        <br><br>
+                        Wybierz graf:
+                        <select name="selectedGraph" id="selectedGraph" style="width:100px">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <input type="submit" name="selectGraph" id="selectGraph" value="Wyświetl">
+                        <br>
+                    </form>
+                </p>
+
             </div>
 
         </div>
@@ -111,6 +137,7 @@
             </div>
             <input style="position: relative; left: 75px;" type="submit" name="addAdjacencyList" id="addAdjacencyList"
                 value="Wyświetl">
+
         </div>
 
         <div id="EulerAndHamilton" class="tabcontent">
@@ -131,6 +158,15 @@
 
         </div>
 
+        <div id="color" class="tabcontent">
+
+            <br>
+            <b>Kolorowanie grafu:</b>
+            <input type="submit" name="color" id="color" value="Koloruj">
+            <br><br>
+
+        </div>
+
     </div>
 
     <div id='sigma-container'></div>
@@ -139,6 +175,8 @@
     <script src="js/graphs.js"></script>
     <script src="js/breadthFirstSearch.js"></script>
     <script src="js/eulerPath.js"></script>
+    <script src="js/examples.js"></script>
+    <script src="js/colorGraph.js"></script>
 
 </body>
 

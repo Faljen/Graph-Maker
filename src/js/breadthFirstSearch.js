@@ -13,7 +13,7 @@ function breadthFirstSearch() {
                 if (graph.nodes[i].id == searchedNodes[j]); {
 
                     const index = searchedNodes.indexOf(searchedNodes[j]);
-                    console.log(searchedNodes[j]);
+                    // console.log(searchedNodes[j]);
 
                     if (!visited.includes(searchedNodes[j])) {
                         visited.push(searchedNodes[j]);
@@ -25,7 +25,7 @@ function breadthFirstSearch() {
                     for (let m = 0; m < graph.nodes[i].neigbours.length; m++) {
 
                         if (!visited.includes(graph.nodes[i].neigbours[m])) {
-                            console.log(graph.nodes[i].neigbours[m]);
+                            // console.log(graph.nodes[i].neigbours[m]);
 
                             searchedNodes.push(graph.nodes[i].neigbours[m])
                         }

@@ -324,3 +324,14 @@ addAdjacencyList.addEventListener('click', () => {
     s.refresh();
 
 })
+
+//Color graph
+const addColorButton = document.getElementById('color');
+addColorButton.addEventListener('click', () => {
+
+    s.graph.clear();
+    colorGraph();
+    s.graph.read(graph);
+    s.refresh();
+
+})
