@@ -22,11 +22,13 @@
             <button class="tablinks" onclick="openTab(event, 'AdjacencyList')"><span style="color: Black;"><i
                         class="fa fa-th-list"></i></span> Lista sąsiedztwa</button>
             <button class="tablinks" onclick="openTab(event, 'EulerAndHamilton')"><span style="color: lightcoral;"><i
-                        class="fa fa-asterisk"></i></span> Cykl Eulera</button>
+                        class="fa fa-asterisk"></i></span> Cykle</button>
             <button class="tablinks" onclick="openTab(event, 'bfs')"><span style="color:fuchsia"><i
                         class="fa fa-search"></i></span> Przeszukiwanie</button>
             <button class="tablinks" onclick="openTab(event, 'color')"><span style="color:yellowgreen"><i
                         class="fa fa-paint-brush"></i></span> Kolorowanie</button>
+            <button class="tablinks" onclick="openTab(event, 'info')"><span style="color:black"><i
+                        class="fa fa-info"></i></span> Informacje</button>
         </div>
 
         <!-- Tab content -->
@@ -147,6 +149,11 @@
             <br>
             Cykl Eulera: <div style="display: inline; font-weight: bold;" id="eulerianPath"></div>
             <br><br>
+            <b>Cykl Hamiltona:</b><br><br>
+            Występowanie cyklu Hamiltona: <div style="display: inline" id="hamiltonOrNot"></div>
+            <br>
+            Cykl Hamiltona: <div style="display: inline; font-weight: bold;" id="hamiltonPath"></div>
+            <br><br>
         </div>
 
         <div id="bfs" class="tabcontent">
@@ -163,6 +170,18 @@
             <br>
             <b>Kolorowanie grafu:</b>
             <input type="submit" name="color" id="color" value="Koloruj">
+            <br><br>
+
+        </div>
+
+        <div id="info" class="tabcontent">
+
+            <br>
+            <b>Stopnie wierzchołków:</b>
+            <div id='nodesDegrees' style="color: black;"></div>
+            <br>
+            <b>Lista sąsiedztwa:</b>
+            <div id='adjacencyList' style="color: black;"></div>
             <br><br>
 
         </div>

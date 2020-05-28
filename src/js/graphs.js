@@ -58,6 +58,8 @@ function getDegree() {
     let counter = 0;
     let nodesDegree = [];
 
+    document.getElementById('nodesDegrees').innerHTML = '';
+
     for (let i = 0; i < graph.edges.length; i++) {
         check.push(graph.edges[i].source);
         check.push(graph.edges[i].target);
@@ -78,10 +80,20 @@ function getDegree() {
         graph.nodes[i].degree = nodesDegree[i];
     }
 
+    for (let i = 0; i < graph.nodes.length; i++) {
+
+        const degree = document.createElement('degree');
+        const degreesList = document.getElementById('nodesDegrees');
+        degree.innerHTML = `<b>W${i+1}:</b> ${graph.nodes[i].degree}<br>`;
+        degreesList.appendChild(degree);
+    }
+
 }
 
 //Get neighbours of nodes
 function getNeigbours() {
+
+    document.getElementById('adjacencyList').innerHTML = '';
 
     for (let i = 0; i < graph.nodes.length; i++) {
         for (let j = 0; j < graph.edges.length; j++) {
@@ -93,6 +105,53 @@ function getNeigbours() {
 
             }
         }
+    }
+
+    for (let i = 0; i < graph.nodes.length; i++) {
+
+        let changedNames = [];
+
+        const list = graph.nodes[i].neigbours;
+        for (let j = 0; j < graph.nodes[i].neigbours.length; j++) {
+            if (graph.nodes[i].neigbours[j] === 'n0') {
+                changedNames.push('W1');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n1') {
+                changedNames.push('W2');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n2') {
+                changedNames.push('W3');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n3') {
+                changedNames.push('W4');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n4') {
+                changedNames.push('W5');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n5') {
+                changedNames.push('W6');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n6') {
+                changedNames.push('W7');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n7') {
+                changedNames.push('W8');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n8') {
+                changedNames.push('W9');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n9') {
+                changedNames.push('W10');
+            }
+            if (graph.nodes[i].neigbours[j] === 'n10') {
+                changedNames.push('W11');
+            }
+        }
+
+        const neighbours = document.createElement('neighbours');
+        const adjacencyList = document.getElementById('adjacencyList');
+        neighbours.innerHTML = `<b>W${i+1}:</b> ${changedNames.join(' ')}<br>`;
+        adjacencyList.appendChild(neighbours);
     }
 
 }
@@ -160,11 +219,14 @@ addEdgeButton.addEventListener('click', () => {
         source: `n${linkFrom}`,
         target: `n${linkTo}`,
         type: 'line',
+        color: '#000000',
         size: 0.5
     }
 
     graph.edges.push(newEdge);
     getNeigbours();
+    getDegree();
+    eulerPath();
     breadthFirstSearch();
     s.graph.read(graph);
     s.refresh();
@@ -218,6 +280,7 @@ addAdjacencyMatrix.addEventListener('click', () => {
                         source: `n${i}`,
                         target: `n${counterOfNumbersInArray}`,
                         type: 'line',
+                        color: '#000000',
                         size: 0.5
                     }
                     numberOfEdge++;
@@ -305,6 +368,7 @@ addAdjacencyList.addEventListener('click', () => {
                     source: `n${i}`,
                     target: `n${adjacencyList[i][j] - 1}`,
                     type: 'line',
+                    color: '#000000',
                     size: 0.5
                 }
                 numberOfEdge++;
@@ -325,7 +389,7 @@ addAdjacencyList.addEventListener('click', () => {
 
 })
 
-//Color graph
+// Color graph
 const addColorButton = document.getElementById('color');
 addColorButton.addEventListener('click', () => {
 

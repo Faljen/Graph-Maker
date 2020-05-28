@@ -2,6 +2,7 @@ const selectedGraph = document.getElementById('selectedGraph');
 
 const selectGraphButton = document.getElementById('selectGraph');
 
+
 selectGraphButton.addEventListener('click', () => {
     event.preventDefault();
 
@@ -10,6 +11,7 @@ selectGraphButton.addEventListener('click', () => {
     s.graph.clear();
     s.refresh();
 
+    document.getElementById('hamiltonPath').textContent = '';
     selected = selectedGraph.options[selectedGraph.selectedIndex].value;
 
     if (selected === '1') {
@@ -22,7 +24,8 @@ selectGraphButton.addEventListener('click', () => {
                     y: 1,
                     size: 2,
                     color: '#000000',
-                    neigbours: []
+                    neigbours: [],
+                    example: '1'
 
                 },
                 {
@@ -181,6 +184,14 @@ selectGraphButton.addEventListener('click', () => {
                 }
             ]
         }
+
+        const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+        hamiltonOrNot.textContent = 'TAK';
+        hamiltonOrNot.style.color = 'green';
+        hamiltonOrNot.style.fontWeight = 'bold';
+        hamiltonPath = 'w1 -> w6 -> w2 -> w5 -> w4 -> w7 -> w3 -> w1';
+        document.getElementById('hamiltonPath').textContent = hamiltonPath;
+
         getDegree();
         getNeigbours();
         breadthFirstSearch();
@@ -199,7 +210,8 @@ selectGraphButton.addEventListener('click', () => {
                     y: 1,
                     size: 2,
                     color: '#000000',
-                    neigbours: []
+                    neigbours: [],
+                    example: '2'
 
                 },
                 {
@@ -333,6 +345,14 @@ selectGraphButton.addEventListener('click', () => {
                 }
             ]
         }
+
+        const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+        hamiltonOrNot.textContent = 'TAK';
+        hamiltonOrNot.style.color = 'green';
+        hamiltonOrNot.style.fontWeight = 'bold';
+        hamiltonPath = 'w1 -> w2 -> w5 -> w4 -> w6 -> w3 -> w1';
+        document.getElementById('hamiltonPath').textContent = hamiltonPath;
+
         getDegree();
         getNeigbours();
         breadthFirstSearch();
@@ -350,7 +370,8 @@ selectGraphButton.addEventListener('click', () => {
                     y: 1,
                     size: 2,
                     color: '#000000',
-                    neigbours: []
+                    neigbours: [],
+                    example: '3'
 
                 },
                 {
@@ -459,6 +480,14 @@ selectGraphButton.addEventListener('click', () => {
                 }
             ]
         }
+
+        const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+        hamiltonOrNot.textContent = 'TAK';
+        hamiltonOrNot.style.color = 'green';
+        hamiltonOrNot.style.fontWeight = 'bold';
+        hamiltonPath = 'w1 -> w2 -> w5 -> w4 -> w3 -> w1';
+        document.getElementById('hamiltonPath').textContent = hamiltonPath;
+
         getDegree();
         getNeigbours();
         breadthFirstSearch();
@@ -477,7 +506,8 @@ selectGraphButton.addEventListener('click', () => {
                         y: 1,
                         size: 2,
                         color: '#000000',
-                        neigbours: []
+                        neigbours: [],
+                        example: '4'
 
                     },
                     {
@@ -553,6 +583,14 @@ selectGraphButton.addEventListener('click', () => {
                     }
                 ]
             }
+
+            const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+            hamiltonOrNot.textContent = 'TAK';
+            hamiltonOrNot.style.color = 'green';
+            hamiltonOrNot.style.fontWeight = 'bold';
+            hamiltonPath = 'w1 -> w2 -> w4 -> w3 -> w1';
+            document.getElementById('hamiltonPath').textContent = hamiltonPath;
+
             getDegree();
             getNeigbours();
             breadthFirstSearch();
@@ -572,7 +610,8 @@ selectGraphButton.addEventListener('click', () => {
                         y: 1,
                         size: 2,
                         color: '#000000',
-                        neigbours: []
+                        neigbours: [],
+                        example: '5'
 
                     },
                     {
@@ -640,6 +679,12 @@ selectGraphButton.addEventListener('click', () => {
                     }
                 ]
             }
+
+            const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+            hamiltonOrNot.textContent = 'NIE';
+            hamiltonOrNot.style.color = 'red';
+            hamiltonOrNot.style.fontWeight = 'bold';
+
             getDegree();
             getNeigbours();
             breadthFirstSearch();
@@ -659,7 +704,8 @@ selectGraphButton.addEventListener('click', () => {
                         y: 1,
                         size: 2,
                         color: '#000000',
-                        neigbours: []
+                        neigbours: [],
+                        example: '6'
 
                     },
                     {
@@ -719,6 +765,12 @@ selectGraphButton.addEventListener('click', () => {
                     }
                 ]
             }
+
+            const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+            hamiltonOrNot.textContent = 'NIE';
+            hamiltonOrNot.style.color = 'red';
+            hamiltonOrNot.style.fontWeight = 'bold';
+
             getDegree();
             getNeigbours();
             breadthFirstSearch();
@@ -738,7 +790,8 @@ selectGraphButton.addEventListener('click', () => {
                         y: 1,
                         size: 2,
                         color: '#000000',
-                        neigbours: []
+                        neigbours: [],
+                        example: '7'
 
                     },
                     {
@@ -850,6 +903,12 @@ selectGraphButton.addEventListener('click', () => {
                     }
                 ]
             }
+
+            const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+            hamiltonOrNot.textContent = 'NIE';
+            hamiltonOrNot.style.color = 'red';
+            hamiltonOrNot.style.fontWeight = 'bold';
+
             getDegree();
             getNeigbours();
             breadthFirstSearch();
@@ -869,7 +928,8 @@ selectGraphButton.addEventListener('click', () => {
                         y: 1,
                         size: 2,
                         color: '#000000',
-                        neigbours: []
+                        neigbours: [],
+                        example: '8'
 
                     },
                     {
@@ -1037,6 +1097,12 @@ selectGraphButton.addEventListener('click', () => {
                     }
                 ]
             }
+
+            const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+            hamiltonOrNot.textContent = 'NIE';
+            hamiltonOrNot.style.color = 'red';
+            hamiltonOrNot.style.fontWeight = 'bold';
+
             getDegree();
             getNeigbours();
             breadthFirstSearch();
@@ -1056,7 +1122,8 @@ selectGraphButton.addEventListener('click', () => {
                         y: 1,
                         size: 2,
                         color: '#000000',
-                        neigbours: []
+                        neigbours: [],
+                        example: '9'
 
                     },
                     {
@@ -1215,7 +1282,7 @@ selectGraphButton.addEventListener('click', () => {
                         size: 0.5
                     },
                     {
-                        id: "e9",
+                        id: "e8",
                         source: "n4",
                         target: "n7",
                         color: '#000000',
@@ -1223,8 +1290,16 @@ selectGraphButton.addEventListener('click', () => {
                         size: 0.5
                     },
                     {
-                        id: "e10",
+                        id: "e9",
                         source: "n6",
+                        target: "n5",
+                        color: '#000000',
+                        type: 'line',
+                        size: 0.5
+                    },
+                    {
+                        id: "e10",
+                        source: "n2",
                         target: "n5",
                         color: '#000000',
                         type: 'line',
@@ -1233,21 +1308,13 @@ selectGraphButton.addEventListener('click', () => {
                     {
                         id: "e11",
                         source: "n2",
-                        target: "n5",
-                        color: '#000000',
-                        type: 'line',
-                        size: 0.5
-                    },
-                    {
-                        id: "e12",
-                        source: "n2",
                         target: "n9",
                         color: '#000000',
                         type: 'line',
                         size: 0.5
                     },
                     {
-                        id: "e13",
+                        id: "e12",
                         source: "n6",
                         target: "n8",
                         color: '#000000',
@@ -1255,7 +1322,7 @@ selectGraphButton.addEventListener('click', () => {
                         size: 0.5
                     },
                     {
-                        id: "e14",
+                        id: "e13",
                         source: "n7",
                         target: "n9",
                         color: '#000000',
@@ -1263,7 +1330,7 @@ selectGraphButton.addEventListener('click', () => {
                         size: 0.5
                     },
                     {
-                        id: "e1",
+                        id: "e14",
                         source: "n8",
                         target: "n9",
                         color: '#000000',
@@ -1272,6 +1339,14 @@ selectGraphButton.addEventListener('click', () => {
                     }
                 ]
             }
+
+
+            const hamiltonOrNot = document.getElementById('hamiltonOrNot');
+            hamiltonOrNot.textContent = 'NIE';
+            hamiltonOrNot.style.color = 'red';
+            hamiltonOrNot.style.fontWeight = 'bold';
+
+
             getDegree();
             getNeigbours();
             breadthFirstSearch();
