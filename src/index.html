@@ -22,11 +22,9 @@
             <button class="tablinks" onclick="openTab(event, 'AdjacencyList')"><span style="color: Black;"><i
                         class="fa fa-th-list"></i></span> Lista sąsiedztwa</button>
             <button class="tablinks" onclick="openTab(event, 'EulerAndHamilton')"><span style="color: lightcoral;"><i
-                        class="fa fa-asterisk"></i></span> Cykle</button>
+                        class="fa fa-asterisk"></i></span> Cykl Hamiltona</button>
             <button class="tablinks" onclick="openTab(event, 'bfs')"><span style="color:fuchsia"><i
                         class="fa fa-search"></i></span> Przeszukiwanie</button>
-            <button class="tablinks" onclick="openTab(event, 'color')"><span style="color:yellowgreen"><i
-                        class="fa fa-paint-brush"></i></span> Kolorowanie</button>
             <button class="tablinks" onclick="openTab(event, 'info')"><span style="color:black"><i
                         class="fa fa-info"></i></span> Informacje</button>
         </div>
@@ -57,31 +55,6 @@
                         <input type="submit" name="addEdge" id="addEdge" value="Połącz">
                     </form>
                 </p>
-                <br>
-
-                <hr class="style-one">
-
-                <p>
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <b>Przykładowe grafy:</b>
-                        <br><br>
-                        Wybierz graf:
-                        <select name="selectedGraph" id="selectedGraph" style="width:100px">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
-                        <input type="submit" name="selectGraph" id="selectGraph" value="Wyświetl">
-                        <br>
-                    </form>
-                </p>
-
             </div>
 
         </div>
@@ -149,11 +122,6 @@
             <br>
             Cykl Eulera: <div style="display: inline; font-weight: bold;" id="eulerianPath"></div>
             <br><br>
-            <b>Cykl Hamiltona:</b><br><br>
-            Występowanie cyklu Hamiltona: <div style="display: inline" id="hamiltonOrNot"></div>
-            <br>
-            Cykl Hamiltona: <div style="display: inline; font-weight: bold;" id="hamiltonPath"></div>
-            <br><br>
         </div>
 
         <div id="bfs" class="tabcontent">
@@ -162,15 +130,6 @@
             <b>Przeszukiwanie wszerz:</b><br><br>
             <div id='addBfs' style="color: goldenrod; font-weight: bold;"></div>
             <br>
-
-        </div>
-
-        <div id="color" class="tabcontent">
-
-            <br>
-            <b>Kolorowanie grafu:</b>
-            <input type="submit" name="color" id="color" value="Koloruj">
-            <br><br>
 
         </div>
 
