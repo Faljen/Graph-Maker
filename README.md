@@ -1,4 +1,4 @@
-# Graph maker
+# Graph Maker
 
 Simple graph maker using Sigma.js library.  </br>   
 There are a few functionalities related to graph theory. </br> </br>
